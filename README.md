@@ -16,7 +16,7 @@ A Tampermonkey userscript that adds keyword filtering, price/rating sliders, and
 ## Install
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/) in your browser
-2. Click to install: *(link TBD once hosted)*
+2. [Click to install](https://raw.githubusercontent.com/bsherrod/sift/master/sift.user.js)
    — or create a new userscript and paste the contents of `sift.user.js`
 3. Go to any Amazon search results page — the Sift panel appears on the right
 
