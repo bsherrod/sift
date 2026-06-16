@@ -5,6 +5,7 @@
 // @description  Add negative keyword filters and enhanced filtering to Amazon search results
 // @match        https://www.amazon.com/s?*
 // @match        https://www.amazon.com/s/*
+// @run-at       document-idle
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_xmlhttpRequest
@@ -13,6 +14,7 @@
 
 (function sift_main() {
   'use strict';
+  console.log('[Sift] Script loaded on:', window.location.href);
 
   // --- Version ---
   // Self-hashing: computes checksum from the function's own source
