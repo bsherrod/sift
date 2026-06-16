@@ -14,15 +14,20 @@
 
 (function sift_main() {
   'use strict';
-  console.log('[Sift] Script loaded on:', window.location.href);
+  console.log('[Sift] Script executing...');
 
   // --- Version ---
   // Self-hashing: computes checksum from the function's own source
   const SIFT_VERSION = (() => {
-    const src = sift_main.toString();
-    let h = 0;
-    for (let i = 0; i < src.length; i++) { h = ((h << 5) - h + src.charCodeAt(i)) | 0; }
-    return (h >>> 0).toString(36).slice(-6);
+    try {
+      const src = sift_main.toString();
+      let h = 0;
+      for (let i = 0; i < src.length; i++) { h = ((h << 5) - h + src.charCodeAt(i)) | 0; }
+      return (h >>> 0).toString(36).slice(-6);
+    } catch(e) {
+      console.warn('[Sift] Version hash failed:', e);
+      return 'unknown';
+    }
   })();
 
   const SIFT_DEV = window.SIFT_DEV || (typeof GM_info !== 'undefined' && /dev/i.test(GM_info.script.name));
